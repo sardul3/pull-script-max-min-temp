@@ -1,6 +1,7 @@
 import csv
 
 tups_arr = []
+hourly_tups_arr = []
 
 def populate_data(filename):	
 	with open(filename) as csv_file:
@@ -11,8 +12,7 @@ def populate_data(filename):
 		     tup_time = str(row[0])
 		     tup_data = (tup_time, temp)
 		     tups_arr.append(tup_data)
-		    	
-	
+			
 def get_data(start, end):
 	f = open("output.txt", "w")
 	while(start<=end):	
@@ -42,6 +42,7 @@ def get_data(start, end):
 		start = start + 1
 
 populate_data('Colby_19892018_hrly.csv')
+
 get_data(1989, 2018)
 	
 	
